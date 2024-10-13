@@ -1,21 +1,20 @@
-public class GerenteDeLoja extends Empregado {
+public class GerenteDeLoja extends Empregados{
     private boolean cumpriuObjetivos;
 
-    public GerenteDeLoja(boolean cumpriuObjetivos) {
+    public GerenteDeLoja(boolean cumpriuObjetivos, String nome) {
+        super(nome);
         this.cumpriuObjetivos = cumpriuObjetivos;
     }
 
     @Override
-    public double calcularSalario() {
-        double salarioBase = super.calcularSalario();
-        if (cumpriuObjetivos) {
-            return salarioBase + 200; // Prémio de 200€ se a loja cumpriu os objetivos
-        }
-        return salarioBase;
+    public double salario() {
+        if (cumpriuObjetivos)
+            return super.salario() + 200.0;
+        return super.salario();
     }
 
     @Override
     public String toString() {
-        return "Gerente de loja com salário: " + calcularSalario() + "€";
+        return "Gerente de loja: " + getNome() + ", com salário: " + salario() + "€";
     }
 }

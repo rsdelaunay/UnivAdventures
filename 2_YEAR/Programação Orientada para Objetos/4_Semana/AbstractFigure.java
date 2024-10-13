@@ -13,4 +13,5 @@ public abstract class AbstractFigure implements Figure {
     }
     public abstract double getPerimeter();
     public abstract double getArea();
+
 }

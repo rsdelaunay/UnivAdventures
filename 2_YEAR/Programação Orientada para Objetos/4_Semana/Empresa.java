@@ -2,20 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Empresa {
-    private List<Empregado> empregados;
+    private List<Empregados> empregados;
 
     public Empresa() {
         this.empregados = new ArrayList<>();
     }
 
-    public void adicionarEmpregado(Empregado empregado) {
+    public void adicionarEmpregado(Empregados empregado) {
         empregados.add(empregado);
     }
 
     public double calcularTotalSalarios() {
         double total = 0;
-        for (Empregado empregado : empregados) {
-            total += empregado.calcularSalario();
+        for (Empregados empregado : empregados) {
+            total += empregado.salario();
         }
         return total;
     }
@@ -23,7 +23,7 @@ public class Empresa {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (Empregado empregado : empregados) {
+        for (Empregados empregado : empregados) {
             sb.append(empregado.toString()).append("\n");
         }
         sb.append("Total dos salários: ").append(calcularTotalSalarios()).append("€");

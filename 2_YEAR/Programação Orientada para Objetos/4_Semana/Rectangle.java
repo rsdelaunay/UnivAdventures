@@ -19,8 +19,7 @@ public class Rectangle extends AbstractFigure {
     }
 
     @Override
-    public String toString() {
-        return "Rectangle [width = " + width + ", height = " + height + "area = " + getArea() + "]";
+    public String toString(){
+        return "Rectangle [area=" + getArea() + "]";
     }
-
 }

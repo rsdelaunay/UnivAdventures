@@ -1,7 +1,6 @@
 public class Circle extends AbstractFigure{
-    private double radius;
-
-    public Circle (int x, int y, double radius){
+    private int radius;
+    public Circle (int x, int y, int radius){
         super(x,y);
         this.radius = radius;
     }
@@ -18,7 +17,6 @@ public class Circle extends AbstractFigure{
 
     @Override
     public String toString(){
-        return "Circle [radius = " + radius + "area = " + getArea() + "]";
+        return "Circle [area=" + getArea() + "]";
     }
-
 }

@@ -1,16 +1,19 @@
 import java.io.File;
+import java.io.FileNotFoundException;
 
-public class LineStudentReader extends LineObjectReader<Aluno> {
+public class LineStudentReader extends LineObjectReader<Aluno>{
 
-    public LineStudentReader(File file) {
+
+    public LineStudentReader (File file) throws FileNotFoundException {
         super(file);
     }
 
     @Override
     public Aluno lineToObject(String line) {
-        String[] parts = line.split(",");
-        int numero = Integer.parseInt(parts[0].trim());
-        String nome = parts[1].trim();
-        return new Aluno(numero, nome);
+        String[] tokens = line.split(","); //divide string por cada ","
+        int numero = Integer.parseInt(tokens[0].trim()); //aparece primeiro o numero
+        String nome = tokens[1].trim(); // dps o nome
+        return new Aluno (numero,nome); //criar aluno
     }
+
 }
