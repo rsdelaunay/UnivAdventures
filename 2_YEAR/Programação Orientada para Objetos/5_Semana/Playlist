@@ -1,0 +1,6 @@
+interface Playlist {
+    String getName();
+    Time getDuration();
+    List<Artist> getArtists();
+    List<Song> getSongs();
+}
