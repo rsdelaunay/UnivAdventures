@@ -1,0 +1,30 @@
+###############################################################################
+## ISCTE-IUL: Trabalho prático de Sistemas Operativos 2023/2024, Enunciado Versão 3+
+##
+## Aluno: Nº: 122123       Nome: Rodrigo Miguel da Silva Delaunay
+## Nome do Módulo: S3.3.1. cron.def
+## Descrição/Explicação do Módulo:
+## O presente documento visa a implementação de uma execução de um script estado_voos.sh,
+## que atualiza a cada hora o ficheiro HTML (e, consequentemente, o ficheiro website) da
+## plataforma IscteFlight.
+##
+## Explicação de quais os comandos a usar para configurar o seu sistema Linux
+## usando este ficheiro:
+##
+## Deverei utilizar o comando "crontab cron.def" no terminal do sistema Linux
+##
+###############################################################################
+
+# Configuração para execução de hora em hora, diariamente, conforme Crontab
+0 * * * * /home/a122123/parte-1/estado_voos.sh
+
+# Explicação da configuração apresentada:
+# | -  - - -  - - Minuto (0-59)
+# | |  - - -  - - Hora (0-23)
+# | |  | -  - - - Dia do mês (1-31)
+# | |  | |  - - - Mês (1-12)
+# | |  | |  | - - Dia da semana (1-7, Segunda até domingo)
+# * * * * * 
+#
+# Ao indicarmos 0 * * * * solicitamos a execução do script /home/a122123/parte-1/estado_voos.sh a cada minuto 0 (hora)
+# sendo que o "*" representa TODOS, portanto a qualquer hora de qualquer dia de qualquer mês.
